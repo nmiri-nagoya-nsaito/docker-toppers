@@ -24,10 +24,12 @@ USER root
 WORKDIR /tmp
 ADD ./scripts/root ./scripts
 RUN chmod -R +x scripts \
+    && sync \
     && ./scripts/setup_root.sh
 WORKDIR /home/$user
 ADD ./scripts/user ./scripts
 RUN chown -R $user:$user ./scripts
 USER $user
 RUN chmod -R +x ./scripts \
+    && sync \
     && ./scripts/setup_user.sh
