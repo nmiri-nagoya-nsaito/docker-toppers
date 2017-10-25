@@ -24,6 +24,6 @@ ln -s ../../../../cfg-1.9.6/cfg/cfg cfg
 cd ../../
 mkdir build; cd build
 perl ../configure -T rpi_arm64_gcc
-make
+make fmp.bin
 
 exit 0
