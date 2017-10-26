@@ -4,6 +4,11 @@ Docker project for TOPPERS/FMP on Raspberry Pi with AArch64
 # これは何か
 Raspberry Pi3 向け TOPPERS/FMP カーネルのための開発環境を構築するためのDockerプロジェクトです．
 
+# 必要なもの
+
+Dockerが必要です．事前にインストールしておく必要があります．
+https://www.docker.com/
+
 # 使い方
 
 ## このプロジェクトのファイルをダウンロード
