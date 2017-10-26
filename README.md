@@ -20,6 +20,18 @@ $ cd docker-toppers-fmp-rpi64
 $ ./start_shell.sh
 ```
 これでTOPPERS/FMP開発用の Linuxコンテナが作られ，その中のbashシェルに入ります．
+
+Ubuntu Xenial のイメージをベースにしてイメージを構築していますが，
+古いイメージがマシンに残っている状態で実行するとイメージのビルド過程でエラーが発生することがあります．
+その場合は --no-cache オプションをつけてイメージの再作成をしてください．
+その上で start_shell.sh を実行します．
+
+```
+$ docker-compose build --no-cache
+$ ./start_shell.sh
+```
+
+
 シェルを終了すればコンテナから出ることができます．
 再度コンテナに入る場合も start_shell.sh スクリプトを実行します．
 
