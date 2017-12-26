@@ -2,7 +2,7 @@
 set -eu
 
 cd $HOME/workdir
-wget https://releases.linaro.org/components/toolchain/binaries/latest/aarch64-elf/gcc-linaro-7.1.1-2017.08-x86_64_aarch64-elf.tar.xz
+wget https://releases.linaro.org/components/toolchain/binaries/7.1-2017.08/aarch64-elf/gcc-linaro-7.1.1-2017.08-x86_64_aarch64-elf.tar.xz
 mkdir aarch64-elf-gcc
 tar xvf gcc-linaro-7.1.1-2017.08-x86_64_aarch64-elf.tar.xz -C aarch64-elf-gcc --strip-components 1
 echo 'export PATH=$HOME/workdir/aarch64-elf-gcc/bin:$PATH' > ~/.bash_profile
