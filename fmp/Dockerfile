@@ -2,9 +2,9 @@ FROM ubuntu:xenial
 MAINTAINER Naoki Saito <saito.naoki@nmiri.city.nagoya.jp>
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y subversion git curl wget sudo vim man \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y subversion git curl wget sudo vim man netcat \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y gcc-arm-none-eabi g++ make perl ruby \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y libboost-dev libboost-system-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libboost-dev libboost-system-dev libpython2.7 \
          libboost-regex-dev libboost-filesystem-dev libboost-program-options-dev libxerces-c-dev
 
 #
