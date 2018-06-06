@@ -1,8 +1,8 @@
 version: '2'
 services:
-  fmp:
+  ssp:
     build:
-      context: fmp 
+      context: ssp 
       args:
         - USER
     stdin_open: true

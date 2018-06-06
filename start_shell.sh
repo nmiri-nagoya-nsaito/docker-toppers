@@ -2,7 +2,7 @@
 
 set -eu
 
-SERVICE=fmp
+SERVICE=ssp
 
 if [ "x$(docker-compose ps -q ${SERVICE})" = "x" ]; then
   docker-compose build ${SERVICE}
