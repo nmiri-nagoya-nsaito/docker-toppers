@@ -1,8 +1,8 @@
 version: '2'
 services:
-  ssp:
+  cli:
     build:
-      context: ssp 
+      context: cli 
       args:
         - USER
     stdin_open: true
