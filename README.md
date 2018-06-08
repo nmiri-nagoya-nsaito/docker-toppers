@@ -23,7 +23,28 @@ $ git clone https://github.com/nmiri-nagoya-nsaito/docker-toppers.git
 
 ```
 $ cd docker-toppers
-$ ./start_shell.sh
+$ ./start_shell.sh 
+Building cli
+Step 1/16 : FROM ubuntu:xenial
+ ---> 0ef2e08ed3fa
+Step 2/16 : MAINTAINER Naoki Saito <saito.naoki@nmiri.city.nagoya.jp>
+ ---> Using cache
+ ---> 1bec673845d0
+Step 3/16 : RUN apt-get update
+ ---> Using cache
+ ---> 2dd9e0f61959
+(中略)
+Step 16/16 : RUN chmod -R +x ./scripts     && sync     && ./scripts/setup_user.sh
+ ---> Running in d9b928e37d60
+Removing intermediate container d9b928e37d60
+ ---> f77b5e071680
+Successfully built f77b5e071680
+Successfully tagged docker-toppers_cli:latest
+Creating docker-toppers_cli_1 ... done
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+saito@fbd67644c60e:~$ 
 ```
 これで開発用の Linuxコンテナが作られ，その中のbashシェルに入ります．
 
@@ -46,7 +67,9 @@ $ ./start_shell.sh
 再度コンテナに入る場合も start_shell.sh スクリプトを実行します．
 
 ```
-$ exit
+saito@fbd67644c60e:~$ exit
+ログアウト
+$ 
 ```
 ## ホスト-コンテナ間のファイル共有
 
