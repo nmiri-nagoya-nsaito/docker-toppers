@@ -22,7 +22,7 @@ $ git clone https://github.com/nmiri-nagoya-nsaito/docker-toppers.git
 ## Dockerイメージをビルドしてbashシェルを起動
 
 ```
-$ cd docker-toppers-fmp-rpi64
+$ cd docker-toppers
 $ ./start_shell.sh
 ```
 これで開発用の Linuxコンテナが作られ，その中のbashシェルに入ります．
