@@ -1,8 +1,8 @@
-# docker-toppers-fmp-rpi64
-Docker project for TOPPERS/FMP on Raspberry Pi with AArch64
+# docker-toppers
+Docker project for TOPPERS software development
 
 # これは何か
-[Raspberry Pi3 向け TOPPERS/FMP カーネル](https://github.com/YujiToshinaga/RPi64Toppers)のための開発環境を構築するためのDockerプロジェクトです．
+[TOPPERSプロジェクト](http://www.toppers.jp/) 向け開発環境のベースを提供するための Docker プロジェクトです．
 
 # 必要なもの
 
@@ -15,9 +15,9 @@ https://www.docker.com/
 ## このプロジェクトのファイルをダウンロード
 
 ```
-$ git clone https://github.com/nmiri-nagoya-nsaito/docker-toppers-fmp-rpi64.git
+$ git clone https://github.com/nmiri-nagoya-nsaito/docker-toppers.git
 ```
-カレントディレクトリに docker-toppers-fmp-rpi64 という名称のディレクトリができます．
+カレントディレクトリに docker-toppers という名称のディレクトリができます．
 
 ## Dockerイメージをビルドしてbashシェルを起動
 
@@ -25,7 +25,7 @@ $ git clone https://github.com/nmiri-nagoya-nsaito/docker-toppers-fmp-rpi64.git
 $ cd docker-toppers-fmp-rpi64
 $ ./start_shell.sh
 ```
-これでTOPPERS/FMP開発用の Linuxコンテナが作られ，その中のbashシェルに入ります．
+これで開発用の Linuxコンテナが作られ，その中のbashシェルに入ります．
 
 ### (注)イメージのビルド途中でエラーが発生する場合
 
@@ -48,19 +48,8 @@ $ ./start_shell.sh
 ```
 $ exit
 ```
-
-## TOPPRERS/FMPカーネルのビルド
-
-```
-$ cd workdir
-$ ../scripts/build_fmp.sh
-```
-
-ビルドに成功すると， workdir/RPi64Toppers/fmp/build/fmp.bin ができます．
+## ホスト-コンテナ間のファイル共有
 
 コンテナを起動するとホームディレクトリ直下に workdir というディレクトリができます．
 またホスト上のカレントディレクトリ直下に workdir というディレクトリもできます．
-それら2つのディレクトリはコンテナとホストとで同じ場所をさしており，ファイルを両者で共有するのに使うことができます．
-
-Raspberry Pi を起動する場合， ホスト上から見える workdir/RPi64Toppers/fmp/build/fmp.bin をSDカードにコピーして使います．
-使い方について詳細は https://github.com/YujiToshinaga/RPi64Toppers を参照してください．
+それら2つのディレクトリは同じ場所を指しているため，両者でファイルを共有するのに使用することができます．
