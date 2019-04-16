@@ -2,7 +2,16 @@ version: '2'
 services:
   cli:
     build:
-      context: cli 
+      context: services/cli
+      args:
+        - USER
+    stdin_open: true
+    tty: true
+    volumes:
+       - ./workdir:/home/${USER}/workdir
+  ubuntu-cosmic:
+    build:
+      context: services/ubuntu-cosmic
       args:
         - USER
     stdin_open: true
