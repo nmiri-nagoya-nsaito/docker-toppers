@@ -8,4 +8,6 @@ rm /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
 update-locale LANGUAGE=ja_JP:ja LANG=ja_JP.UTF-8
 
+sed -i -e 's/\# store-plaintext-passwords = no/store-plaintext-passwords = no/' /etc/subversion/servers
+
 exit 0
