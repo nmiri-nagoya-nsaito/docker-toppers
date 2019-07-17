@@ -3,8 +3,8 @@ MAINTAINER Naoki Saito <saito.naoki@nmiri.city.nagoya.jp>
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y subversion git curl wget netcat \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y g++ make perl ruby python \
-    && DEBUAN_FRONTEND=noninteractive apt-get install -y sudo vim nano man
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y g++ make perl ruby python libpython2.7 \
+    && DEBUAN_FRONTEND=noninteractive apt-get install -y sudo vim nano man libncurses5
 
 #
 # create a user (UserID: ${USER} or "developer")
