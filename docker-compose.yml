@@ -9,9 +9,9 @@ services:
     tty: true
     volumes:
        - ./workdir:/home/${USER}/workdir
-  ubuntu-cosmic:
+  ubuntu-focal:
     build:
-      context: services/ubuntu-cosmic
+      context: services/ubuntu-focal
       args:
         - USER
     stdin_open: true
