@@ -21,14 +21,19 @@ RUN adduser --gecos ",,," --disabled-password $user \
 ###
 USER root
 WORKDIR /tmp
-ADD ./scripts/root ./scripts
+ADD common/scripts/root ./scripts/common
+ADD cli/scripts/root ./scripts/custom
 RUN chmod -R +x scripts \
     && sync \
-    && ./scripts/setup_root.sh
+    && ./scripts/common/setup_root.sh \
+    && ./scripts/custom/setup_root.sh
 WORKDIR /home/$user
-ADD ./scripts/user ./scripts
+ADD common/scripts/user ./scripts/common
+ADD cli/scripts/user ./scripts/custom
 RUN chown -R $user:$user ./scripts
 USER $user
 RUN chmod -R +x ./scripts \
     && sync \
-    && ./scripts/setup_user.sh
+    && ./scripts/common/setup_user.sh \
+    && ./scripts/custom/setup_user.sh
+ENTRYPOINT ["sh", "-c", "./scripts/common/entrypoint.sh"]

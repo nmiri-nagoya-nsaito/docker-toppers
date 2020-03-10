@@ -2,7 +2,8 @@ version: '2'
 services:
   cli:
     build:
-      context: services/cli
+      context: services
+      dockerfile: cli/Dockerfile
       args:
         - USER
     stdin_open: true
@@ -11,7 +12,8 @@ services:
        - ./workdir:/home/${USER}/workdir
   ubuntu-focal:
     build:
-      context: services/ubuntu-focal
+      context: services
+      dockerfile: ubuntu-focal/Dockerfile
       args:
         - USER
     stdin_open: true
