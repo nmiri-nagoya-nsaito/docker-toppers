@@ -4,7 +4,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y subversion git curl wget netcat \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y g++ make perl ruby \
-    && DEBUAN_FRONTEND=noninteractive apt-get install -y sudo vim nano man
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y sudo vim nano man
 
 #
 # create a user (UserID: ${USER} or "developer")
